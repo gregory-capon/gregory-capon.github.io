@@ -20,16 +20,22 @@ const EXPERIENCES = [
       "Etude, prise en main et ajustement des hyperparamètres de différents modèles de détection (YOLO-NAS, YOLOX, YOLOv7, YOLOv9) et de segmentation (DeepLabv3, Unet, Unet++, SAM3).,
       "Inférence d’environ 200 ms, un compromis assumé pour gagner en fiabilité tout en restant compatible avec le temps réel.",
       "Développement Python de bout en bout : traitement des données, entraînement, évaluation."],
-      "Résultats : 
-        Une pipeline en deux parties (voir image X.X), 
-        faux positifs : moins d'1%, 
-        faux négatifs : moins d'1%,   
-        temps d' : ~200 ms, 
+      "Résultats : ",
+        "Une pipeline en deux parties (voir image X.X)," ,
+        "faux positifs : moins d'1%, ",
+        "faux négatifs : moins d'1%,  " ,
+        "temps d' : ~200 ms, ",
   
     tags: ["Python", "Deep learning", "Détection", "Segmentation", 'TensorRT", "Pytorch", "Docker", "OpenCV", "Blender"],
     // J'aimerais avoir autre choses que réalisations, comme résultats par exemple ou autres catégories que tu juges utiles 
     // cover: "assets/img/ngx-1.jpg",
+    cover: "assets/img/ngx - 1.png",
+    cover: "assets/img/ngx - 2.png",
     // images: [["assets/img/ngx-1.jpg", "Exemple de détection"], ["assets/img/ngx-2.jpg", "Base de données"]],
+    images: [["assets/img/ngx - 1.png", "Pipeline en 2 parties"], ["assets/img/ngx - 2.png", "Détection finale"]]
+    // J'iamerais pouvoir ajouter une éventuelle explication 
+    // Par exemple je veux commenter l'image 1 en disant : "partie 1 ; détection, partie 2, segmentation"
+
     images: [] },
   { id: "wasoria", cat: "pro", title: "Stage ingénieur IA", org: "Wasoria, Le Creusot", period: "06/2025 – 08/2025",
     summary: "Conduite d’un projet de détection basé sur l’IA.", description: [],
