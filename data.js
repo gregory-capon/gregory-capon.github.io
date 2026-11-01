@@ -17,14 +17,14 @@ const EXPERIENCES = [
       "Rédaction d'un état de l'art.",
       "Étude et évaluation d’approches alternatives de détection et de segmentation.",
       "Construction de la base de données : augmentation et labellisation.",
-      "Etude, prise en main et ajustement des hyperparamètres de différents modèles de détection (YOLO-NAS, YOLOX, YOLOv7, YOLOv9) et de segmentation (DeepLabv3, Unet, Unet++, SAM3).,
+      "Etude, prise en main et ajustement des hyperparamètres de différents modèles de détection (YOLO-NAS, YOLOX, YOLOv7, YOLOv9) et de segmentation (DeepLabv3, Unet, Unet++, SAM3).",
       "Inférence d’environ 200 ms, un compromis assumé pour gagner en fiabilité tout en restant compatible avec le temps réel.",
-      "Développement Python de bout en bout : traitement des données, entraînement, évaluation."],
+      "Développement Python de bout en bout : traitement des données, entraînement, évaluation.",
       "Résultats : ",
         "Une pipeline en deux parties (voir image X.X)," ,
         "faux positifs : moins d'1%, ",
         "faux négatifs : moins d'1%,  " ,
-        "temps d' : ~200 ms, ",
+        "temps d' : ~200 ms, ",]
   
     tags: ["Python", "Deep learning", "Détection", "Segmentation", 'TensorRT", "Pytorch", "Docker", "OpenCV", "Blender"],
     // J'aimerais avoir autre choses que réalisations, comme résultats par exemple ou autres catégories que tu juges utiles 
