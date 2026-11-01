@@ -1,7 +1,7 @@
 // Seul fichier à modifier pour changer le contenu du site.
 
 // ---------- TEXTES DE L’INTERFACE ----------
-const T = { view: "Voir le projet", back: "Retour aux expériences", images: "Images", pts: "Réalisations", none: "Projet introuvable.", dir: "projets", home: "", proj: "../../" };
+const T = { view: "Voir le projet", back: "Retour aux expériences", images: "Images", pts: "Réalisations", none: "Projet introuvable.", dir: "projects", home: "", proj: "../../" };
 
 // ---------- EXPÉRIENCES (projets) ----------
 // id : nom du dossier de la page du projet (projets/<id>/). Sans id, pas de page (simple carte).
