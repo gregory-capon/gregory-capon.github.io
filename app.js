@@ -6,7 +6,6 @@ const tags = (a) => { const u = el("ul", "tags"); a.forEach((g) => u.append(el("
 function card(x) {
   const c = el(x.id ? "a" : "div", "card");
   if (x.id) c.href = T.dir + "/" + x.id + "/";
-  if (x.cover) { const i = el("img"); i.src = T.home + x.cover; i.alt = ""; i.loading = "lazy"; c.append(i); }
   c.append(el("h3", "", x.title));
   if (meta(x)) c.append(el("p", "meta", meta(x)));
   if (x.summary) c.append(el("p", "sum", x.summary));
