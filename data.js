@@ -9,6 +9,8 @@ const T = { view: "Voir le projet", back: "Retour aux expériences", images: "Im
 const EXP_CATS = { pro: "Professionnel", acad: "Académique", perso: "Personnel" };
 
 const EXPERIENCES = [
+
+  // NGX
   { id: "ngx-group", cat: "pro", title: "Stage ingénieur IA", org: "NGX Group, Mérignac", period: "03/2026 – 08/2026",
     summary: "Détection d’anomalies par vision par ordinateur sur des installations de clôture, en remplacement d’une solution existante peu fiable.",
     tags: ["Python", "Deep learning", "Détection", "Segmentation", "TensorRT", "PyTorch", "Docker", "OpenCV", "Blender"],
@@ -30,20 +32,39 @@ const EXPERIENCES = [
       { title: "Résultats",
         metrics: [["< 1 %", "faux positifs"], ["< 1 %", "faux négatifs"],
           ["~200 ms", "temps d’inférence", "contre ~70 ms pour le YOLO initial : un compromis assumé pour la fiabilité, compatible avec un usage temps réel"]],
-        images: [["assets/img/ngx - 2.png", "Détection finale", ""]] }
+        images: [["assets/img/ngx - 2.png", "Détection finale", ""]] }, 
+      { title: "Tâches annexes",
+        points: [["Contrôle qualité (contrôler la bonne conformité des pièces des robots)"], 
+                 ["Aligner des images RGB avec des images thermiques (sous points : trouver les paramètres intrinsèques des deux caméras, undistort les images, faire en sorte que les images aient le même recouvrement de pixel, map d'énergie pour trouver les contours, toruver le meilleur match, superposer les images."]],
     ] },
+
+  // WASORIA
   { id: "wasoria", cat: "pro", title: "Stage ingénieur IA", org: "Wasoria, Le Creusot", period: "06/2025 – 08/2025",
     summary: "Conduite d’un projet de détection basé sur l’IA.", description: [],
-    points: ["Développement Python de la solution.", "Constitution de la base de données et augmentation de données.", "Ajustement des hyperparamètres et optimisation du modèle."],
-    tags: ["Python", "Deep learning", "Hyperparamètres"], images: [] },
+    points: [["Développement Python de la solution."], 
+             ["Constitution de la base de données et augmentation de données."],
+             ["Ajustement des hyperparamètres et optimisation du modèle."],
+             ["Conduite d'opérations/d'expériences sur le terrain de A à Z."]
+             ["Développement d'une interface pour trier les fichiers sensibles de l'entreprise"]],
+    tags: ["Python", "Deep learning", "Hyperparamètres", "RFID"], images: [] },
+
+  // AD Prod
   { id: "adprod", cat: "pro", title: "Stage ingénieur", org: "ADProd, Annecy", period: "04/2025 – 05/2025",
     summary: "Conception de robots conversationnels.", description: [],
     points: ["Développement Python et optimisation des performances.", "Conception de circuits électroniques.", "Présentations orales des travaux."],
     tags: ["Python", "Électronique"], images: [] },
+  // Drive Leclerc
   { cat: "pro", title: "Employé logistique (CDD)", org: "Leclerc, Colmar", period: "06/2024 – 07/2024", summary: "Emploi d’été.", tags: [] },
+
+  // Perso
+
+  // AWAKE-CHALLENGE
   { id: "awake-challenge", cat: "perso", title: "Awake Challenge", org: "Véhicule autonome à l’échelle 1/10", period: "",
-    summary: "Conception d’un véhicule entièrement autonome : 2e place sur 10 équipes.", description: [],
+    summary: "Projet de voiture autonome à l’échelle 1/10 pour l’Awake Challenge 2025, compétition nationale de robotique. Le véhicule enjambe une piste intérieure avec navigation par carte de profondeur (Intel RealSense), deux ultrasons latéraux pour des corrections de proximité et comptage de tours par détection de bande couleur. Le groupe a terminé 2e du classement.",
+    description: ["Enchaîner tours de piste de façon autonome en restant centré grâce à la vision de profondeur, éviter les obstacles rapprochés que la caméra peut mal voir, et arrêter proprement après un nombre de passages détectés sur la ligne de course. L’architecture sépare la décision (Raspberry Pi 5, Python) et l’exécution temps réel (Arduino Uno, PWM servo et moteurs)."],
     points: ["Compétition par équipes."], tags: ["Robotique", "Autonomie"], images: [] },
+
+  // OLYMPIADES
   { id: "olympiades-fanuc", cat: "perso", title: "Olympiades FANUC (Bac+5)", org: "Concours de robotique industrielle", period: "",
     summary: "Concours organisé par FANUC : qualifié pour les phases finales.", description: [],
     points: ["Programmation de robots industriels."], tags: ["Robotique", "FANUC"], images: [] }
