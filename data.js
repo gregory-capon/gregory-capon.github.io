@@ -44,7 +44,7 @@ const EXPERIENCES = [
     points: [["Développement Python de la solution."], 
              ["Constitution de la base de données et augmentation de données."],
              ["Ajustement des hyperparamètres et optimisation du modèle."],
-             ["Conduite d'opérations/d'expériences sur le terrain de A à Z."]
+             ["Conduite d'opérations/d'expériences sur le terrain de A à Z."],
              ["Développement d'une interface pour trier les fichiers sensibles de l'entreprise"]],
     tags: ["Python", "Deep learning", "Hyperparamètres", "RFID"], images: [] },
 
