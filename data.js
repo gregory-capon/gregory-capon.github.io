@@ -62,8 +62,52 @@ const EXPERIENCES = [
   { id: "awake-challenge", cat: "perso", title: "Awake Challenge", org: "Véhicule autonome à l’échelle 1/10", period: "",
     summary: "Projet de voiture autonome à l’échelle 1/10 pour l’Awake Challenge 2025, compétition nationale de robotique. Le véhicule enjambe une piste intérieure avec navigation par carte de profondeur (Intel RealSense), deux ultrasons latéraux pour des corrections de proximité et comptage de tours par détection de bande couleur. Le groupe a terminé 2e du classement.",
     description: ["Enchaîner tours de piste de façon autonome en restant centré grâce à la vision de profondeur, éviter les obstacles rapprochés que la caméra peut mal voir, et arrêter proprement après un nombre de passages détectés sur la ligne de course. L’architecture sépare la décision (Raspberry Pi 5, Python) et l’exécution temps réel (Arduino Uno, PWM servo et moteurs)."],
-    points: ["Compétition par équipes."], tags: ["Robotique", "Autonomie"], images: [] },
+    points: ["Compétition par équipes."], 
 
+   // Un encart
+    Technologies et outils utilisés : Langages : Python 3, C++ (Arduino)
+Vision : pyrealsense2, OpenCV (HSV, masques, contours)
+Calcul : NumPy (cartes de profondeur, agrégations par zone)
+Communication : pyserial, port USB série 9600 bauds
+Calculateurs : Raspberry Pi 5, Arduino Uno
+Capteurs : Intel RealSense RGB-D, 2× HC-SR04
+Actionneurs : 2× moteurs DC avec ponts, 1× servomoteur de direction
+CAO : conception mécanique 1/10, profilés aluminium 15×15 mm
+// Autre encart
+Choix techniques et solutions retenues
+Raspberry Pi + Arduino : le Pi absorbe le coût logiciel de la vision 3D et du suivi de parcours tandis que l’Arduino assure PWM stable et lecture ultrasons avec latence maîtrisée.
+Step-up 24 V : les moteurs du châssis sont alimentés sous une tension supérieure à la LiPo 3S, d’où l’élévation de tension côté alimentation avant les drivers.
+Step-down 5 V / 5,1 V : rails distincts pour le servo et pour le Pi afin de limiter les chutes de tension et le bruit sur la logique.
+RealSense : accès direct à la profondeur alignée sur la couleur pour la même ROI que le comptage de tours couleur.
+Ultrasons en secours : correction qui court-circuite temporairement la décision caméra lorsqu’un obstacle est détecté très près sur un côté.
+    tags: ["Robotique", "Autonomie", "Fusion360", "Python", "OpenCV"], 
+    images: [] },
+
+  // une autre encart encore : 
+  Conception mécanique
+Propulsion et châssis
+Le véhicule est en propulsion arrière avec deux roues motrices indépendantes, chacune entraînée par un moteur dédié. La transmission passe par un train d’engrenages coniques pour transférer le couple jusqu’aux essieux arrière. Le châssis repose sur des profilés aluminium 15×15 mm pour un compromis masse et rigidité.
+images: ["propulsion-et-chassis.jpg"] 
+Fixation des roues arrière
+Les roues arrière sont montées sur des paliers fixés au châssis. Un axe métallique traverse chaque palier et porte la roue ainsi que la transmission par engrenage vissé sur l’axe.
+  images: ["fixation-roues.jpg"],
+Direction et gabarit
+Une garde au sol d’environ 10 mm et des pneus polyvalents permettent de rouler sur revêtements lisses ou texturés. La plage de vitesse visée est d’environ 5 à 20 km/h selon la consigne moteur. La direction utilise un servomoteur à couple élevé relié au moyeu de la roue avant gauche par une tige filetée et une biellette, pour un réglage simple et une maintenance rapide.
+images: ["direction.jpg"],
+Conception électronique
+L’alimentation principale est une batterie LiPo 3S 5200 mAh (tension nominale 11,1 V, plage utile typique environ 11 à 12,5 V). Deux cartes principales dialoguent par USB : un Raspberry Pi 5 pour la perception et la navigation, une Arduino Uno pour l’acquisition ultrasons et la commande des actionneurs. Les moteurs requièrent une tension élevée (schéma 24 V côté boost) par rapport à la batterie, d’où un convertisseur step-up. Deux step-down fournissent typiquement le 5 V pour le servo et le 5,1 V pour le Pi. La caméra RGB-D est branchée sur le Raspberry Pi. Les deux HC-SR04 sont câblés sur l’Arduino.
+images: ["electronique.jpg"],
+Navigation autonome
+La navigation combine profondeur (décision principale) et ultrasons (sécurité de proximité). Le programme Python acquiert la carte de profondeur, extrait une ROI dans la partie basse de l’image puis la divise en trois bandes (gauche, centre, droite). Pour chaque bande on prend la distance minimale sur les pixels valides si le centre est suffisamment libre, la voiture vise tout droit sinon on choisit le côté le plus dégagé, et si tout est bloqué on privilégie la zone avec l’obstacle le plus lointain. Les consignes de braquage envoyées à l’Arduino sont 60°, 97° et 130° selon la décision. Si un ultrason mesure un obstacle sous le seuil de 0,1 m dans le code, la commande correspondante (tourner à droite ou à gauche) remplace temporairement la sortie caméra.
+
+Le comptage de tours utilise l’image couleur : détection HSV d’une bande au sol, machine à états avec temporisations pour éviter les doubles comptages, arrêt des moteurs après cinq tours validés et envoi de STOP à l’Arduino.
+images: ["décision-direction.jpg"]
+Contributions
+Participation à la conception mécanique complète (choix du matériel, respect des budgets, propulsion, direction, intégration capteurs) dans le cadre du groupe.
+Intégration logicielle Python RealSense, logique de zones et filtrage ultrasons.
+Réalisation des livrables.
+
+  
   // OLYMPIADES
   { id: "olympiades-fanuc", cat: "perso", title: "Olympiades FANUC (Bac+5)", org: "Concours de robotique industrielle", period: "",
     summary: "Concours de robotique industrielle organisé par FANUC. Le groupe s'est qualifié pour les phases finales.", 
@@ -87,18 +131,21 @@ const EXPERIENCES = [
 const FORM_CATS = { lycee: "Lycée", ecole: "École d’ingénieur", mobilite: "Mobilité à l’étranger" };
 
 const FORMATIONS = [
-  { cat: "lycee", title: "Baccalauréat", org: "", period: "", summary: "", points: [] },
+  { cat: "lycee", title: "Baccalauréat", org: "", period: "", summary: "", points: ["spécialités : mahtématiques, Physique-Chimie, Biologie"] },
   { cat: "ecole", title: "Diplôme d’ingénieur, Robotique et Instrumentation", org: "Polytech Dijon, Dijon et Le Creusot", period: "2021 – 2026",
     summary: "Cycle ingénieur terminé avec la mention très bien.",
-    points: ["Robotique industrielle : programmation de robots FANUC et Stäubli.", "Électronique, instrumentation, bases de ROS2."] },
+    points: ["Robotique industrielle : programmation de robots FANUC et Stäubli.",
+             "Électronique, instrumentation, bases de ROS2, python, bases de C++.",
+             "Vision par ordinateur (en environnement industriel et SFM)"] },
   { cat: "mobilite", title: "Master 2 Intelligence artificielle (double diplôme)", org: "UTM, Kuala Lumpur, Malaisie", period: "2025 – 2026",
-    summary: "Six mois d’études à l’étranger, en anglais.", points: ["Intelligence artificielle et vision par ordinateur.", "TOEIC 900."] }
+    summary: "Six mois d’études à l’étranger, en anglais.", points: ["Intelligence artificielle et vision par ordinateur."] }
 ];
 
 // ---------- DIPLÔMES ET CERTIFICATIONS ----------
 const DIPLOMES = [
-  { title: "Certification ROS2", org: "The Construct", year: "" },
-  { title: "Baccalauréat", org: "", year: "" },
+  { title: "Certification ROS2", org: "The Construct", year: "2025" },
+  { title: "TOEIC oral and writting comprehension", year: "2025"
+  { title: "Baccalauréat", org: "", year: "2021" },
   { title: "Master 2 Intelligence artificielle", org: "UTM, Kuala Lumpur", year: "2026" },
   { title: "Diplôme d’ingénieur, Robotique et Instrumentation, mention très bien", org: "Polytech Dijon", year: "2026" }
 ];
