@@ -66,8 +66,21 @@ const EXPERIENCES = [
 
   // OLYMPIADES
   { id: "olympiades-fanuc", cat: "perso", title: "Olympiades FANUC (Bac+5)", org: "Concours de robotique industrielle", period: "",
-    summary: "Concours organisé par FANUC : qualifié pour les phases finales.", description: [],
-    points: ["Programmation de robots industriels."], tags: ["Robotique", "FANUC"], images: [] }
+    summary: "Concours de robotique industrielle organisé par FANUC. Le groupe s'est qualifié pour les phases finales.", 
+    description: ["Les olympiades se déroulent en 2 parties : - La première partie se déroule en plusieurs mois, les équipes doivent répondre à un cahier des charges avec une solution orginale et surtout efficace et efficiente en respectant les normes de sécurité et en limitant les coûts, pour nous, le cahier des charges était d'intégrer des robots FANUC et de développer des préhenseurs pour atteindre une cadence cible sur une ligne d'embouteillage avec palettisation des caisses de bouteilles à la fin. - La deuxième partie est la phase finale, plusieurs épreuves se déroulent sur 2 jours. Le but est de répondre à un cahier des charges qu'on découvre au fur et à mesure des épreuves. Les qualités évaluées pendaznt la phase finale est le respect des consignes de sécurités (mise en sécurité de la cellule robotisée, ARU quand on travail dans la cellule...), la communication dans le groupe, et surtout la rapidité d'exécution pour installer du matériel, programmer le robot et répondre à la solution."],
+    points: [["Avant-porjet :"],
+            ["- Gestion de budget"],
+            ["- Choix de matériel adapté aux contraintes du site"],
+            ["- Développement de préhenseurs"],
+            ["- Rédaction d'un compte-rendu détaillé et d'une vidée de présentation de la solution"],],
+    images: [],
+    // Lien vers la vidéo de présentation : (à insérer subtilement) https://drive.google.com/file/d/1vR5DZSj3LirDlXHa6Pm9j8c4B4j5VRJY/view?usp=drive_link
+   
+    points: ["Phase finale :"],
+            ["- Programmation de robots industriels."],
+            ["- Prise en main plus poussée de Roboguide"]
+    tags: ["Robotique", "FANUC", "Roboguide", "Fusion360"], 
+    images: [] }
 ];
 
 // ---------- FORMATION ----------
