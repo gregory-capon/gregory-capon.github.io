@@ -18,7 +18,7 @@ const EXPERIENCES = [
   // NGX
   { id: "ngx-group", cat: "pro", title: "Stage ingénieur IA", org: "NGX Group, Mérignac", period: "03/2026 – 08/2026",
     summary: "Détection d’anomalies par vision par ordinateur sur des installations de clôture, en remplacement d’une solution existante peu fiable.",
-    tags: ["Python", "Deep learning", "Détection", "Segmentation", "TensorRT", "PyTorch", "Docker", "OpenCV", "Blender"],
+    tags: ["Python", "Deep learning", "Détection", "Segmentation", "TensorRT", "PyTorch", "Docker", "OpenCV", "Blender", "CUDA"],
     cover: "assets/img/ngx - 2.png",
     sections: [
       { title: "Contexte",
@@ -120,7 +120,7 @@ const EXPERIENCES = [
   { id: "olympiades-fanuc", cat: "perso", title: "Olympiades FANUC (Bac+5)", org: "Concours de robotique industrielle", period: "",
     summary: "Concours de robotique industrielle organisé par FANUC. Notre groupe s’est qualifié pour les phases finales.",
     tags: ["Robotique", "FANUC", "Roboguide", "Fusion360"],
-    // cover: "assets/img/fanuc.jpg",
+    cover: "assets/img/olympiades-fanuc-cover.png",
     links: [["Vidéo de présentation de la solution", "https://drive.google.com/file/d/1vR5DZSj3LirDlXHa6Pm9j8c4B4j5VRJY/view?usp=drive_link"]],
     sections: [
       { title: "Le concours", text: ["Les olympiades se déroulent en deux parties : un avant-projet de plusieurs mois, puis une phase finale de deux jours."] },
