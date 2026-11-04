@@ -72,7 +72,7 @@ const EXPERIENCES = [
         text: ["Concevoir et déployer un robot expressif capable d’interagir naturellement avec un public, de gérer des commandes vocales, de suivre la présence humaine et d’adapter ses réponses et ses comportements en conditions réelles d’usage."] },
       { title: "Architecture du code", imagesFirst: true,
         text: ["L’orchestration est assurée par `main.py`, qui lance les threads audio, vision, moteurs, OLED et régulation de seuil. Les modules partagent l’état via `robot_state` et des timers comportementaux."],
-        images: [["assets/img/adprod-1.png", "Architecture logicielle"]],
+        images: [["assets/img/adprod-1.png"]],
         facts: [["Pipeline audio et IA", "`audio_utils.py` capture la voix (PyAudio) et la transcrit (Vosk, Google), passe les commandes à `voice_command.py`, puis route les requêtes vers `AI_utils.py` (GPT, Mistral ou modèle local)."],
           ["Pipeline vision et moteurs", "`video_utils.py` détecte le visage et les yeux (dlib) et alimente les coordonnées oculaires ; `motor_controller.py` pilote les servos via PCA9685 pour les expressions et les mouvements."],
           ["Synthèse et expressivité", "La réponse de l’IA est vocalisée via Edge TTS et synchronisée avec des animations faciales (clignements, sourcils, orientation de la tête) pendant la lecture audio."],
