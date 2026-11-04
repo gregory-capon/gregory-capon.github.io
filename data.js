@@ -1,3 +1,6 @@
+// Je pense qu'on gagnerai à afficher sur plus de largeur. Là on doit utiliser quelque chose comme 50% de la largeur et j'aimerais grimper à 70/80%
+// J'aimerais mettre des vidéos aussi mais je sais pas si c'est possible. Dis moi si on peut parce que mettre des liens c'est un peu dommage.
+
 // Seul fichier à modifier pour changer le contenu du site.
 
 // ---------- TEXTES DE L’INTERFACE ----------
@@ -86,7 +89,7 @@ const EXPERIENCES = [
           ["Modélisation 3D", "Fusion 360"],
           ["Outils", "PyCharm, Geany, Cura, ROS 2"]] },
       { title: "Simulation et démonstration logicielle",
-        links: [["Vidéo de présentation de la solution", "https://drive.google.com/file/d/1vR5DZSj3LirDlXHa6Pm9j8c4B4j5VRJY/view?usp=drive_link"]],
+        links: [["Vidéo de présentation de la solution", ""]],
         text: ["La vidéo montre la boucle complète : interaction vocale, génération de la réponse, synthèse audio et animation faciale couplée.",
           "Elle illustre aussi la robustesse de l’orchestration multi-threads sur une plateforme embarquée."] },
       { title: "Conception mécanique",
@@ -96,7 +99,7 @@ const EXPERIENCES = [
           "Une colonne creuse qui guide les câbles et supporte la tête tout en limitant la torsion mécanique.",
           "Une rotule renforcée qui permet la rotation de la tête. Cette pièce a fait l’objet de plusieurs itérations pour améliorer sa solidité, notamment par l’ajout d’une vis de renfort.",
           "Une tête creuse, conçue pour accueillir la caméra, les LEDs, les servomoteurs et les supports d’yeux mobiles."],
-        images: [["assets/img/adprod-2.png"]] },
+        images: [["assets/img/adprod-2.png"]] }, // Je veux cette image 2 fois plus petite au moins 
       { title: "Conception électronique",
         text: ["Le circuit intègre une logique d’alimentation hybride (batterie 3S et secteur), une recharge via BMS, une adaptation de tension et une distribution de puissance vers le Raspberry Pi, le contrôleur PCA9685 et les périphériques."],
         images: [["assets/img/adprod-3.png"]] },
@@ -105,7 +108,8 @@ const EXPERIENCES = [
           ["Commandes vocales", "mot-clé d’activation, changement de personnalité et de voix, lancement de démonstrations."],
           ["Mode IA hybride", "bascule GPT, Mistral ou local selon le contexte et la disponibilité du réseau."],
           ["Régulation audio", "recalcul périodique du seuil de bruit ambiant (`seuil_regulator.py`)."]] },
-      { title: "Métriques clés",
+      { title: "Métriques clés", 
+       // Là j'aimerais faire quelque chose d'équilibré visuellement parce qu'on a 2 niveaux, un avec 3 métriques et 1 avec une seule, ça serait mieux d'en faire 2 et 2 un peu plus larges.
         metrics: [["5", "threads principaux", "lancés depuis main.py : audio, vision, moteurs, OLED, régulation de seuil"],
           ["3", "modes IA", "GPT, Mistral et repli sémantique local"],
           ["11", "DoF", "famille MG90S/MG995, pilotés via PCA9685"],
