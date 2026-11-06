@@ -133,7 +133,7 @@ const EXPERIENCES = [
   // AWAKE CHALLENGE
   { id: "awake-challenge", cat: "perso", title: "Awake Challenge", org: "Véhicule autonome à l’échelle 1/10", period: "2025",
     summary: "Voiture autonome à l’échelle 1/10 pour l’Awake Challenge 2025, compétition nationale de robotique. Navigation par carte de profondeur, ultrasons de proximité et comptage de tours par détection d’une bande de couleur. Notre groupe a terminé 2e du classement.",
-    cover: "assets/img/awake-challenge-cover.png"
+    cover: "assets/img/awake-challenge-cover.png",
     tags: ["Robotique", "Autonomie", "Fusion360", "Python", "OpenCV"],
     // cover: "assets/img/awake.jpg",
     sections: [
