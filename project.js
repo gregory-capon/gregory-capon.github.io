@@ -13,31 +13,57 @@ function list(a) {
   a.forEach((t) => { const li = rich(el("li"), Array.isArray(t) ? t[0] : t); if (Array.isArray(t) && t[1]) li.append(list(t[1])); u.append(li); });
   return u;
 }
-// images : [chemin, légende, explication optionnelle] (ou juste "chemin"). Une image introuvable est masquée.
+function caption(f, cap, expl) {
+  if (!cap && !expl) return;
+  const c = el("figcaption"); if (cap) c.append(el("b", "", cap)); if (expl) c.append(document.createTextNode(expl)); f.append(c);
+}
+// images : [chemin, légende, explication, largeur en %] (ou juste "chemin"). Une image introuvable est masquée.
 function gallery(imgs) {
   const g = el("div", "gallery");
   imgs.forEach((im) => {
-    const [src, cap, expl] = [].concat(im);
-    const f = el("figure"), i = el("img"); i.src = T.proj + src; i.alt = cap || ""; i.loading = "lazy"; i.onerror = () => f.remove(); f.append(i);
-    if (cap || expl) { const c = el("figcaption"); if (cap) c.append(el("b", "", cap)); if (expl) c.append(document.createTextNode(expl)); f.append(c); }
-    g.append(f);
+    const [src, cap, expl, size] = [].concat(im);
+    const f = el("figure"), i = el("img"); i.src = T.proj + src; i.alt = cap || ""; i.loading = "lazy"; i.onerror = () => f.remove();
+    if (size) { f.className = "sized"; f.style.width = size + "%"; }
+    f.append(i); caption(f, cap, expl); g.append(f);
+  });
+  return g;
+}
+// Lien YouTube ou Google Drive -> adresse d’intégration.
+function embedUrl(u) {
+  let k = u.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/);
+  if (k) return "https://www.youtube-nocookie.com/embed/" + k[1];
+  k = u.match(/drive\.google\.com\/file\/d\/([\w-]+)/);
+  return k ? "https://drive.google.com/file/d/" + k[1] + "/preview" : u;
+}
+// videos : [fichier ou lien, légende, explication, largeur en %]
+function videos(list) {
+  const g = el("div", "gallery");
+  list.forEach(([src, cap, expl, size]) => {
+    const f = el("figure"); let v;
+    if (/^https?:/.test(src)) { v = el("iframe"); v.src = embedUrl(src); v.allowFullscreen = true; v.loading = "lazy"; v.title = cap || "Vidéo"; }
+    else { v = el("video"); v.src = T.proj + src; v.controls = true; v.preload = "metadata"; v.playsInline = true; }
+    if (size) { f.className = "sized"; f.style.width = size + "%"; }
+    f.append(v); caption(f, cap, expl); g.append(f);
   });
   return g;
 }
 function metrics(a) {
-  const g = el("div", "metrics");
+  const g = el("div", "metrics" + (a.length === 4 ? " two" : ""));
   a.forEach(([v, label, note]) => { const d = el("div", "metric"); d.append(el("b", "", v), el("span", "", label)); if (note) d.append(el("small", "", note)); g.append(d); });
   return g;
 }
 function facts(a) { const d = el("dl", "facts"); a.forEach(([k, v]) => d.append(el("dt", "", k), rich(el("dd"), v))); return d; }
-function links(a) { const l = el("p", "links"); a.forEach(([label, url]) => { const x = el("a", "", label); x.href = url; x.target = "_blank"; x.rel = "noopener"; l.append(x); }); return l; }
+function links(a) {
+  const ok = a.filter(([, u]) => u); if (!ok.length) return el("span");
+  const l = el("p", "links"); ok.forEach(([label, url]) => { const x = el("a", "", label); x.href = url; x.target = "_blank"; x.rel = "noopener"; l.append(x); }); return l;
+}
 
 function section(s) {
   const box = el("div", s.callout ? "callout" : "");
   box.append(el(s.h === 3 ? "h3" : "h2", "", s.title));
   arr(s.text).forEach((t) => box.append(rich(el("p"), t)));
   if (s.links && s.links.length) box.append(links(s.links));
-  if (s.imagesFirst && s.images) box.append(gallery(s.images));
+  if (s.imagesFirst && s.images && s.images.length) box.append(gallery(s.images));
   if (s.facts && s.facts.length) box.append(facts(s.facts));
   if (s.points && s.points.length) box.append(list(s.points));
   if (s.metrics && s.metrics.length) box.append(metrics(s.metrics));
@@ -47,6 +73,7 @@ function section(s) {
     box.append(g);
   }
   if (!s.imagesFirst && s.images && s.images.length) box.append(gallery(s.images));
+  if (s.videos && s.videos.length) box.append(videos(s.videos));
   m.append(box);
 }
 
@@ -61,4 +88,5 @@ else {
   if (p.points && p.points.length) { m.append(el("h2", "", T.pts), list(p.points)); }
   (p.sections || []).forEach(section);
   if (p.images && p.images.length) { m.append(el("h2", "", T.images), gallery(p.images)); }
+  if (p.videos && p.videos.length) { m.append(el("h2", "", "Vidéos"), videos(p.videos)); }
 }
