@@ -1,5 +1,5 @@
 // Je pense qu'on gagnerai à afficher sur plus de largeur. Là on doit utiliser quelque chose comme 50% de la largeur et j'aimerais grimper à 70/80%
-// J'aimerais mettre des vidéos aussi mais je sais pas si c'est possible. Dis moi si on peut parce que mettre des liens c'est un peu dommage.
+// J'aimerais mettre des vidéos aussi mais je sais pas si c'est possible. Dis moi si on peut parce que mettre des liens c'est un peu dommage. En tout cas dans le dépot il me dit qu'il supporte que des fichiers de moins de 25MB, j'ai 2 vidéos qui font 137MB et 118 MB. C'est complètement envisageable de réduire les dimensiosn pour qu'ils fassent 100MB mais 25 c'est trop peu.
 
 // Seul fichier à modifier pour changer le contenu du site.
 
@@ -133,6 +133,7 @@ const EXPERIENCES = [
   // AWAKE CHALLENGE
   { id: "awake-challenge", cat: "perso", title: "Awake Challenge", org: "Véhicule autonome à l’échelle 1/10", period: "2025",
     summary: "Voiture autonome à l’échelle 1/10 pour l’Awake Challenge 2025, compétition nationale de robotique. Navigation par carte de profondeur, ultrasons de proximité et comptage de tours par détection d’une bande de couleur. Notre groupe a terminé 2e du classement.",
+    cover: "assets/img/awake-challenge-cover.png"
     tags: ["Robotique", "Autonomie", "Fusion360", "Python", "OpenCV"],
     // cover: "assets/img/awake.jpg",
     sections: [
