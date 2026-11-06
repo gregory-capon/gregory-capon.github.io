@@ -1,6 +1,3 @@
-// Je pense qu'on gagnerai à afficher sur plus de largeur. Là on doit utiliser quelque chose comme 50% de la largeur et j'aimerais grimper à 70/80%
-// J'aimerais mettre des vidéos aussi mais je sais pas si c'est possible. Dis moi si on peut parce que mettre des liens c'est un peu dommage. En tout cas dans le dépot il me dit qu'il supporte que des fichiers de moins de 25MB, j'ai 2 vidéos qui font 137MB et 118 MB. C'est complètement envisageable de réduire les dimensiosn pour qu'ils fassent 100MB mais 25 c'est trop peu.
-
 // Seul fichier à modifier pour changer le contenu du site.
 
 // ---------- TEXTES DE L’INTERFACE ----------
@@ -15,7 +12,9 @@ const T = { view: "Voir le projet", back: "Retour aux expériences", images: "Im
 //   points: ["texte", ["texte avec sous-points", ["sous-point", ...]]], facts: [["Libellé", "Valeur"]],
 //   columns: [{ title, points }, ...] (deux encadrés côte à côte), links: [["Texte", "https://..."]], imagesFirst: true (images avant le reste),
 //   dans un texte, `code` s’affiche en police de code,
-//   metrics: [["valeur", "libellé", "note optionnelle"]], images: [["chemin", "Légende", "Explication optionnelle"]]
+//   metrics: [["valeur", "libellé", "note optionnelle"]],
+//   images: [["chemin", "Légende", "Explication optionnelle", largeur en % (ex. 50)]],
+//   videos: [["assets/video/demo.mp4" ou lien YouTube / Google Drive, "Légende"]]
 const EXP_CATS = { pro: "Professionnel", acad: "Académique", perso: "Personnel" };
 
 const EXPERIENCES = [
@@ -89,7 +88,8 @@ const EXPERIENCES = [
           ["Modélisation 3D", "Fusion 360"],
           ["Outils", "PyCharm, Geany, Cura, ROS 2"]] },
       { title: "Simulation et démonstration logicielle",
-        links: [["Vidéo de présentation de la solution", ""]],
+        // Pour afficher la vidéo : retire les // et remplace le lien (YouTube, Google Drive ou assets/video/demo.mp4).
+        // videos: [["https://www.youtube.com/watch?v=XXXXXXXXXXX", "Démonstration du robot"]],
         text: ["La vidéo montre la boucle complète : interaction vocale, génération de la réponse, synthèse audio et animation faciale couplée.",
           "Elle illustre aussi la robustesse de l’orchestration multi-threads sur une plateforme embarquée."] },
       { title: "Conception mécanique",
@@ -99,7 +99,7 @@ const EXPERIENCES = [
           "Une colonne creuse qui guide les câbles et supporte la tête tout en limitant la torsion mécanique.",
           "Une rotule renforcée qui permet la rotation de la tête. Cette pièce a fait l’objet de plusieurs itérations pour améliorer sa solidité, notamment par l’ajout d’une vis de renfort.",
           "Une tête creuse, conçue pour accueillir la caméra, les LEDs, les servomoteurs et les supports d’yeux mobiles."],
-        images: [["assets/img/adprod-2.png"]] }, // Je veux cette image 2 fois plus petite au moins 
+        images: [["assets/img/adprod-2.png", "", "", 30]] },
       { title: "Conception électronique",
         text: ["Le circuit intègre une logique d’alimentation hybride (batterie 3S et secteur), une recharge via BMS, une adaptation de tension et une distribution de puissance vers le Raspberry Pi, le contrôleur PCA9685 et les périphériques."],
         images: [["assets/img/adprod-3.png"]] },
@@ -108,8 +108,7 @@ const EXPERIENCES = [
           ["Commandes vocales", "mot-clé d’activation, changement de personnalité et de voix, lancement de démonstrations."],
           ["Mode IA hybride", "bascule GPT, Mistral ou local selon le contexte et la disponibilité du réseau."],
           ["Régulation audio", "recalcul périodique du seuil de bruit ambiant (`seuil_regulator.py`)."]] },
-      { title: "Métriques clés", 
-       // Là j'aimerais faire quelque chose d'équilibré visuellement parce qu'on a 2 niveaux, un avec 3 métriques et 1 avec une seule, ça serait mieux d'en faire 2 et 2 un peu plus larges.
+      { title: "Métriques clés",
         metrics: [["5", "threads principaux", "lancés depuis main.py : audio, vision, moteurs, OLED, régulation de seuil"],
           ["3", "modes IA", "GPT, Mistral et repli sémantique local"],
           ["11", "DoF", "famille MG90S/MG995, pilotés via PCA9685"],
@@ -135,7 +134,6 @@ const EXPERIENCES = [
     summary: "Voiture autonome à l’échelle 1/10 pour l’Awake Challenge 2025, compétition nationale de robotique. Navigation par carte de profondeur, ultrasons de proximité et comptage de tours par détection d’une bande de couleur. Notre groupe a terminé 2e du classement.",
     cover: "assets/img/awake-challenge-cover.png",
     tags: ["Robotique", "Autonomie", "Fusion360", "Python", "OpenCV"],
-    // cover: "assets/img/awake.jpg",
     sections: [
       { title: "Objectif",
         text: ["Enchaîner des tours de piste de façon autonome en restant centré grâce à la vision de profondeur, éviter les obstacles rapprochés que la caméra peut mal voir, et s’arrêter proprement après un nombre de passages détectés sur la ligne de course. L’architecture sépare la décision (Raspberry Pi 5, Python) de l’exécution temps réel (Arduino Uno, PWM servo et moteurs)."] },
@@ -183,12 +181,12 @@ const EXPERIENCES = [
     summary: "Concours de robotique industrielle organisé par FANUC. Notre groupe s’est qualifié pour les phases finales.",
     tags: ["Robotique", "FANUC", "Roboguide", "Fusion360"],
     cover: "assets/img/olympiades-fanuc-cover.png",
-    links: [["Vidéo de présentation de la solution", "https://drive.google.com/file/d/1vR5DZSj3LirDlXHa6Pm9j8c4B4j5VRJY/view?usp=drive_link"]],
     sections: [
       { title: "Le concours", text: ["Les olympiades se déroulent en deux parties : un avant-projet de plusieurs mois, puis une phase finale de deux jours."] },
       { h: 3, title: "Avant-projet",
         text: ["Les équipes répondent à un cahier des charges par une solution originale, efficace et efficiente, qui respecte les normes de sécurité et limite les coûts. Pour nous : intégrer des robots FANUC et développer des préhenseurs afin d’atteindre une cadence cible sur une ligne d’embouteillage, avec palettisation des caisses de bouteilles en fin de ligne."],
-        points: ["Gestion du budget.", "Choix du matériel adapté aux contraintes du site.", "Développement de préhenseurs.", "Rédaction d’un compte rendu détaillé et d’une vidéo de présentation de la solution."] },
+        points: ["Gestion du budget.", "Choix du matériel adapté aux contraintes du site.", "Développement de préhenseurs.", "Rédaction d’un compte rendu détaillé et d’une vidéo de présentation de la solution."],
+        videos: [["https://drive.google.com/file/d/1vR5DZSj3LirDlXHa6Pm9j8c4B4j5VRJY/view?usp=drive_link", "Vidéo de présentation de la solution"]] },
       { h: 3, title: "Phase finale",
         text: ["Plusieurs épreuves sur deux jours, à partir d’un cahier des charges découvert au fil des épreuves. Sont évalués le respect des consignes de sécurité (mise en sécurité de la cellule robotisée, arrêt d’urgence lors des interventions dans la cellule), la communication dans le groupe et surtout la rapidité d’exécution : installer le matériel, programmer le robot et répondre à la demande."],
         points: ["Programmation de robots industriels.", "Prise en main plus poussée de Roboguide."] }
