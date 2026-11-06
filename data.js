@@ -55,7 +55,7 @@ const EXPERIENCES = [
   { id: "wasoria", cat: "pro", title: "Stage ingénieur IA", org: "Wasoria, Le Creusot", period: "06/2025 – 08/2025",
     summary: "Conduite d’un projet de détection basé sur l’IA.",
     tags: ["Python", "Deep learning", "Hyperparamètres", "RFID"],
-    // cover: "assets/img/wasoria.jpg",
+    cover: "assets/img/wasoria-bags.png",
     sections: [
       { title: "Missions",
         points: ["Développement Python de la solution.",
