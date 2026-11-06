@@ -91,7 +91,8 @@ const EXPERIENCES = [
         // Pour afficher la vidéo : retire les // et remplace le lien (YouTube, Google Drive ou assets/video/demo.mp4).
         // videos: [["https://www.youtube.com/watch?v=XXXXXXXXXXX", "Démonstration du robot"]],
         text: ["La vidéo montre la boucle complète : interaction vocale, génération de la réponse, synthèse audio et animation faciale couplée.",
-          "Elle illustre aussi la robustesse de l’orchestration multi-threads sur une plateforme embarquée."] },
+          "Elle illustre aussi la robustesse de l’orchestration multi-threads sur une plateforme embarquée."],
+        videos: [["https://drive.google.com/file/d/1avCImfKNrHvJmWiO7U7BOAXzFCTHnZ2X/view?usp=sharing"]] },
       { title: "Conception mécanique",
         text: ["La modélisation 3D a été réalisée principalement avec Fusion 360. Chaque pièce a été pensée pour être facilement imprimable en 3D et assemblable sans outil spécifique. Les tolérances ont été ajustées manuellement selon les comportements observés après impression.",
           "Le robot est composé de plusieurs modules distincts :"],
