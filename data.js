@@ -21,7 +21,7 @@ const EXP_CATS = { pro: "Professionnel", acad: "Académique", perso: "Personnel"
 const EXPERIENCES = [
 
   // NGX
-  { id: "ngx-group", cat: "pro", title: "Stage ingénieur IA", org: "NGX Group, Mérignac", period: "03/2026 – 08/2026",
+  { id: "ngx-group", cat: "pro", title: "NGX Robotics - Stage ingénieur IA", org: "NGX Group, Mérignac", period: "03/2026 – 08/2026",
     summary: "Détection d’anomalies par vision par ordinateur sur des installations de clôture, en remplacement d’une solution existante peu fiable.",
     tags: ["Python", "Deep learning", "Détection", "Segmentation", "TensorRT", "PyTorch", "Docker", "OpenCV", "Blender", "CUDA"],
     cover: "assets/img/ngx - 2.png",
@@ -52,7 +52,7 @@ const EXPERIENCES = [
     ] },
 
   // WASORIA
-  { id: "wasoria", cat: "pro", title: "Stage ingénieur IA", org: "Wasoria, Le Creusot", period: "06/2025 – 08/2025",
+  { id: "wasoria", cat: "pro", title: "Wasoria - Stage ingénieur IA", org: "Wasoria, Le Creusot", period: "06/2025 – 08/2025",
     summary: "Conduite d’un projet de détection basé sur l’IA.",
     tags: ["Python", "Deep learning", "Hyperparamètres", "RFID"],
     cover: "assets/img/wasoria-bags.png",
@@ -66,7 +66,7 @@ const EXPERIENCES = [
     ] },
 
   // AD PROD
-  { id: "adprod", cat: "pro", title: "Stage ingénieur : conception d’un robot conversationnel", org: "ADProd, Annecy", period: "04/2025 – 05/2025",
+  { id: "adprod", cat: "pro", title: "ADProd - Stage ingénieur : conception d’un robot conversationnel", org: "ADProd, Annecy", period: "04/2025 – 05/2025",
     summary: "Robot conversationnel embarqué avec une architecture logicielle multimodale.",
     tags: ["Python", "Électronique", "Protocoles de communication", "Fusion360", "Temps réel", "OpenCV"],
     cover: "assets/img/adprod-cover.png",
