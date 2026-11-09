@@ -219,6 +219,7 @@ const DIPLOMES = [
   { title: "Master 2 Intelligence artificielle", org: "UTM, Kuala Lumpur", year: "2026" },
   { title: "Diplôme d’ingénieur, Robotique et Instrumentation, mention très bien", org: "Polytech Dijon", year: "2026" },
   { title: "Pemris B", org: "", year: ""}, 
+  { title: "TOEIC (compréhension écrite et orale)", org: "Score", year: "900" }, 
   { title: "Certification ROS2", org: "The Construct", year: "2025" },
   { title: "TOEIC, compréhension orale et écrite", org: "Score : 900", year: "2025" },
   { title: "Baccalauréat", org: "", year: "2021" },
@@ -229,5 +230,5 @@ const SKILLS = [
   ["Programmation", "Python (utilisé en production sur 3 stages), C, C++, Git, Linux et Windows"],
   ["IA et vision", "Computer vision, deep learning, labellisation et augmentation de données, optimisation de modèles, TensorFlow, TensorRT, OpenCV"],
   ["Robotique", "Robots industriels FANUC et Stäubli, notions de ROS2, électronique de base"],
-  ["Langues", "Français (langue maternelle), anglais (TOEIC 900)"]
+  ["Langues", "Français (langue maternelle), anglais (professionel)"]
 ];
