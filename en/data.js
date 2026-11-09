@@ -199,11 +199,12 @@ const FORMATIONS = [
 
 // ---------- DEGREES AND CERTIFICATIONS ----------
 const DIPLOMES = [
+  { title: "Master 2 Artificial Intelligence", org: "UTM, Kuala Lumpur", year: "2026" },
+  { title: "Engineering degree, Robotics and Instrumentation, with honours", org: "Polytech Dijon", year: "2026" },
+  { title: "Diving license", org: "", year: "" },
   { title: "ROS2 Certification", org: "The Construct", year: "2025" },
   { title: "TOEIC, listening and reading comprehension", org: "Score: 900", year: "2025" },
   { title: "Baccalauréat (French high school diploma)", org: "", year: "2021" },
-  { title: "Master 2 Artificial Intelligence", org: "UTM, Kuala Lumpur", year: "2026" },
-  { title: "Engineering degree, Robotics and Instrumentation, with honours", org: "Polytech Dijon", year: "2026" }
 ];
 
 // ---------- SKILLS ----------
