@@ -216,11 +216,12 @@ const FORMATIONS = [
 
 // ---------- DIPLÔMES ET CERTIFICATIONS ----------
 const DIPLOMES = [
+  { title: "Master 2 Intelligence artificielle", org: "UTM, Kuala Lumpur", year: "2026" },
+  { title: "Diplôme d’ingénieur, Robotique et Instrumentation, mention très bien", org: "Polytech Dijon", year: "2026" },
+  { title: "Pemris B", org: "", year: ""}, 
   { title: "Certification ROS2", org: "The Construct", year: "2025" },
   { title: "TOEIC, compréhension orale et écrite", org: "Score : 900", year: "2025" },
   { title: "Baccalauréat", org: "", year: "2021" },
-  { title: "Master 2 Intelligence artificielle", org: "UTM, Kuala Lumpur", year: "2026" },
-  { title: "Diplôme d’ingénieur, Robotique et Instrumentation, mention très bien", org: "Polytech Dijon", year: "2026" }
 ];
 
 // ---------- COMPÉTENCES ----------
