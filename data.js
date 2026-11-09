@@ -221,7 +221,7 @@ const DIPLOMES = [
   { title: "Pemris B", org: "", year: ""}, 
   { title: "TOEIC (compréhension écrite et orale)", org: "Score", year: "900" }, 
   { title: "Certification ROS2", org: "The Construct", year: "2025" },
-  { title: "TOEIC, compréhension orale et écrite", org: "Score : 900", year: "2025" },
+  // { title: "TOEIC, compréhension orale et écrite", org: "Score : 900", year: "2025" },
   { title: "Baccalauréat", org: "", year: "2021" },
 ];
 
