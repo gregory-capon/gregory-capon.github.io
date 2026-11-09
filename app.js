@@ -17,11 +17,11 @@ function card(x) {
 }
 
 // Catégories déroulantes, fermées par défaut ; une catégorie vide n’apparaît pas.
-function groups(box, cats, items) {
+function groups(box, cats, items, fixed) {
   Object.entries(cats).forEach(([k, label]) => {
     const its = items.filter((x) => x.cat === k);
     if (!its.length) return;
-    const d = el("details", "group"), s = el("summary");
+    const d = el(fixed ? "div" : "details", "group"), s = el(fixed ? "div" : "summary", fixed ? "ghead" : "");
     s.append(el("span", "", label), el("span", "count", String(its.length)));
     const ul = el("ul", "rail");
     its.forEach((x) => { const li = el("li"); li.append(card(x)); ul.append(li); });
@@ -37,7 +37,7 @@ function run(sel, f) {
   }
 }
 run("#exp", () => groups($("#exp"), EXP_CATS, EXPERIENCES));
-run("#form", () => groups($("#form"), FORM_CATS, FORMATIONS));
+run("#form", () => groups($("#form"), FORM_CATS, FORMATIONS, true));
 run("#dipl", () => DIPLOMES.forEach((d) => {
   const li = el("li"); li.append(el("b", "", d.title));
   const m = [d.org, d.year].filter(Boolean).join(" — ");
@@ -45,3 +45,9 @@ run("#dipl", () => DIPLOMES.forEach((d) => {
   $("#dipl").append(li);
 }));
 run("#skills", () => SKILLS.forEach(([k, v]) => $("#skills").append(el("dt", "", k), el("dd", "", v))));
+run("#contact", () => {
+  $("#mail").href = "mailto:" + CONTACT.email; $("#mail").dataset.tip = CONTACT.email;
+  const l = $("#linkedin");
+  if (CONTACT.linkedin && !/TON-IDENTIFIANT|YOUR-ID/.test(CONTACT.linkedin)) { l.href = CONTACT.linkedin; l.hidden = false; }
+  $("#cv").href = T.home + CONTACT.cv;
+});
