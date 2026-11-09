@@ -6,7 +6,6 @@ const arr = (x) => (x === undefined ? [] : [].concat(x));
 const p = EXPERIENCES.find((x) => x.id === document.body.dataset.project);
 const m = $("#project");
 document.body.classList.add("proj");
-const back = el("a", "back", T.back); back.href = "../../#experiences"; m.append(back);
 
 // Un point est soit un texte, soit [texte, [sous-points]].
 function list(a) {
