@@ -3,6 +3,10 @@
 // ---------- TEXTES DE L’INTERFACE ----------
 const T = { view: "Voir le projet", back: "Retour aux expériences", images: "Images", pts: "Réalisations", none: "Projet introuvable.", dir: "projects", home: "", proj: "../../" };
 
+// ---------- CONTACT ----------
+// linkedin : colle l’adresse de ton profil (le logo n’apparaît que lorsqu’elle est renseignée). cv : chemin du PDF.
+const CONTACT = { email: "capongregory68@gmail.com", linkedin: "https://www.linkedin.com/in/TON-IDENTIFIANT", cv: "assets/cv/CV-Gregory_Capon-FR.pdf" };
+
 // ---------- EXPÉRIENCES (projets) ----------
 // id     : nom du dossier de la page du projet (projects/<id>/). Sans id : simple carte, sans page.
 // cover  : IMAGE DE LA CARTE sur l’accueil. C’est ici que tu choisis l’image de chaque projet (chemin dans assets/img/). Sans cover : pas d’image.
@@ -197,7 +201,7 @@ const EXPERIENCES = [
 ];
 
 // ---------- FORMATION ----------
-const FORM_CATS = { lycee: "Lycée", ecole: "École d’ingénieur", mobilite: "Mobilité à l’étranger" };
+const FORM_CATS = { ecole: "École d’ingénieur", mobilite: "Mobilité à l’étranger", lycee: "Lycée" };
 
 const FORMATIONS = [
   { cat: "lycee", title: "Baccalauréat", org: "", period: "2021", summary: "", points: ["Spécialités : mathématiques, physique-chimie, biologie."] },
