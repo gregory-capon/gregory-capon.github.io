@@ -13,8 +13,9 @@ const T = { view: "Voir le projet", back: "Retour aux expériences", images: "Im
 //   columns: [{ title, points }, ...] (deux encadrés côte à côte), links: [["Texte", "https://..."]], imagesFirst: true (images avant le reste),
 //   dans un texte, `code` s’affiche en police de code,
 //   metrics: [["valeur", "libellé", "note optionnelle"]],
-//   images: [["chemin", "Légende", "Explication optionnelle", largeur en % (ex. 50)]],
-//   videos: [["assets/video/demo.mp4" ou lien YouTube / Google Drive, "Légende"]]
+//   images: [["chemin", "Légende", "Explication optionnelle", largeur en % (ex. 50), "center"]],  (largeur et "center" optionnels),
+//   center: true au niveau du projet : centre toutes ses images ; cards: true : faits en cartes ; side: true : points à gauche, image à droite,
+//   videos: [["assets/video/demo.mp4" ou lien YouTube / Google Drive, "Légende", "", largeur en % (ex. 55)]]
 const EXP_CATS = { pro: "Professionnel", acad: "Académique", perso: "Personnel" };
 
 const EXPERIENCES = [
@@ -39,7 +40,7 @@ const EXPERIENCES = [
       { title: "Résultats",
         metrics: [["< 1 %", "faux positifs"], ["< 1 %", "faux négatifs"],
           ["~200 ms", "temps d’inférence", "contre ~70 ms pour le YOLO initial : un compromis assumé pour la fiabilité, compatible avec un usage temps réel"]],
-        images: [["assets/img/ngx - 2.png", "Détection finale", ""]] },
+        images: [["assets/img/ngx - 2.png", "Détection finale", "", 60, "center"]] },
       { title: "Tâches annexes",
         points: ["Contrôle qualité : vérifier la conformité des pièces des robots.",
           ["Alignement d’images RGB et thermiques :",
@@ -72,7 +73,7 @@ const EXPERIENCES = [
     sections: [
       { title: "Objectif",
         text: ["Concevoir et déployer un robot expressif capable d’interagir naturellement avec un public, de gérer des commandes vocales, de suivre la présence humaine et d’adapter ses réponses et ses comportements en conditions réelles d’usage."] },
-      { title: "Architecture du code", imagesFirst: true,
+      { title: "Architecture du code", imagesFirst: true, cards: true,
         text: ["L’orchestration est assurée par `main.py`, qui lance les threads audio, vision, moteurs, OLED et régulation de seuil. Les modules partagent l’état via `robot_state` et des timers comportementaux."],
         images: [["assets/img/adprod-1.png"]],
         facts: [["Pipeline audio et IA", "`audio_utils.py` capture la voix (PyAudio) et la transcrit (Vosk, Google), passe les commandes à `voice_command.py`, puis route les requêtes vers `AI_utils.py` (GPT, Mistral ou modèle local)."],
@@ -93,14 +94,14 @@ const EXPERIENCES = [
         text: ["La vidéo montre la boucle complète : interaction vocale, génération de la réponse, synthèse audio et animation faciale couplée.",
           "Elle illustre aussi la robustesse de l’orchestration multi-threads sur une plateforme embarquée."],
         videos: [["https://drive.google.com/file/d/1avCImfKNrHvJmWiO7U7BOAXzFCTHnZ2X/view?usp=sharing"]] },
-      { title: "Conception mécanique",
+      { title: "Conception mécanique", side: true,
         text: ["La modélisation 3D a été réalisée principalement avec Fusion 360. Chaque pièce a été pensée pour être facilement imprimable en 3D et assemblable sans outil spécifique. Les tolérances ont été ajustées manuellement selon les comportements observés après impression.",
           "Le robot est composé de plusieurs modules distincts :"],
         points: ["Un socle intégrant le circuit électronique et l’alimentation (batterie ou secteur), qui permet de passer rapidement de l’une à l’autre.",
           "Une colonne creuse qui guide les câbles et supporte la tête tout en limitant la torsion mécanique.",
           "Une rotule renforcée qui permet la rotation de la tête. Cette pièce a fait l’objet de plusieurs itérations pour améliorer sa solidité, notamment par l’ajout d’une vis de renfort.",
           "Une tête creuse, conçue pour accueillir la caméra, les LEDs, les servomoteurs et les supports d’yeux mobiles."],
-        images: [["assets/img/adprod-2.png", "", "", 30]] },
+        images: [["assets/img/adprod-2.png"]] },
       { title: "Conception électronique",
         text: ["Le circuit intègre une logique d’alimentation hybride (batterie 3S et secteur), une recharge via BMS, une adaptation de tension et une distribution de puissance vers le Raspberry Pi, le contrôleur PCA9685 et les périphériques."],
         images: [["assets/img/adprod-3.png"]] },
@@ -133,6 +134,7 @@ const EXPERIENCES = [
   // AWAKE CHALLENGE
   { id: "awake-challenge", cat: "perso", title: "Awake Challenge", org: "Véhicule autonome à l’échelle 1/10", period: "2025",
     summary: "Voiture autonome à l’échelle 1/10 pour l’Awake Challenge 2025, compétition nationale de robotique. Navigation par carte de profondeur, ultrasons de proximité et comptage de tours par détection d’une bande de couleur. Notre groupe a terminé 2e du classement.",
+    center: true,
     cover: "assets/img/awake-challenge-cover.png",
     tags: ["Robotique", "Autonomie", "Fusion360", "Python", "OpenCV"],
     sections: [
@@ -187,7 +189,7 @@ const EXPERIENCES = [
       { h: 3, title: "Avant-projet",
         text: ["Les équipes répondent à un cahier des charges par une solution originale, efficace et efficiente, qui respecte les normes de sécurité et limite les coûts. Pour nous : intégrer des robots FANUC et développer des préhenseurs afin d’atteindre une cadence cible sur une ligne d’embouteillage, avec palettisation des caisses de bouteilles en fin de ligne."],
         points: ["Gestion du budget.", "Choix du matériel adapté aux contraintes du site.", "Développement de préhenseurs.", "Rédaction d’un compte rendu détaillé et d’une vidéo de présentation de la solution."],
-        videos: [["https://drive.google.com/file/d/1vR5DZSj3LirDlXHa6Pm9j8c4B4j5VRJY/view?usp=drive_link", "Vidéo de présentation de la solution"]] },
+        videos: [["https://drive.google.com/file/d/1vR5DZSj3LirDlXHa6Pm9j8c4B4j5VRJY/view?usp=drive_link", "Vidéo de présentation de la solution", "", 55]] },
       { h: 3, title: "Phase finale",
         text: ["Plusieurs épreuves sur deux jours, à partir d’un cahier des charges découvert au fil des épreuves. Sont évalués le respect des consignes de sécurité (mise en sécurité de la cellule robotisée, arrêt d’urgence lors des interventions dans la cellule), la communication dans le groupe et surtout la rapidité d’exécution : installer le matériel, programmer le robot et répondre à la demande."],
         points: ["Programmation de robots industriels.", "Prise en main plus poussée de Roboguide."] }
