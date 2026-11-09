@@ -6,20 +6,13 @@ const tags = (a) => { const u = el("ul", "tags"); a.forEach((g) => u.append(el("
 function card(x) {
   const c = el(x.id ? "a" : "div", "card");
   if (x.id) c.href = T.dir + "/" + x.id + "/";
-  const b = el("div", "cbody");
-  b.append(el("h3", "", x.title));
-  if (meta(x)) b.append(el("p", "meta", meta(x)));
-  if (x.summary) b.append(el("p", "sum", x.summary));
-  if (!x.id && x.points && x.points.length) { const u = el("ul", "pts"); x.points.forEach((p) => u.append(el("li", "", p))); b.append(u); }
-  if (x.tags && x.tags.length) b.append(tags(x.tags));
-  if (x.id) b.append(el("span", "more", T.view));
-  if (x.cover) {
-    // Image complète, sans recadrage ; masquée si le fichier est introuvable.
-    const w = el("div", "cover"), i = el("img"); i.src = T.home + x.cover; i.alt = ""; i.loading = "lazy";
-    i.onerror = () => { w.remove(); c.classList.remove("has-cover"); };
-    w.append(i); c.classList.add("has-cover"); c.append(w);
-  }
-  c.append(b);
+  if (x.cover) { const i = el("img"); i.src = T.home + x.cover; i.alt = ""; i.loading = "lazy"; i.onerror = () => i.remove(); c.append(i); }
+  c.append(el("h3", "", x.title));
+  if (meta(x)) c.append(el("p", "meta", meta(x)));
+  if (x.summary) c.append(el("p", "sum", x.summary));
+  if (!x.id && x.points && x.points.length) { const u = el("ul", "pts"); x.points.forEach((p) => u.append(el("li", "", p))); c.append(u); }
+  if (x.tags && x.tags.length) c.append(tags(x.tags));
+  if (x.id) c.append(el("span", "more", T.view));
   return c;
 }
 
