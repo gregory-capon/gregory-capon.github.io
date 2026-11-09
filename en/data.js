@@ -3,6 +3,10 @@
 // ---------- INTERFACE TEXT ----------
 const T = { view: "View project", back: "Back to experience", images: "Images", pts: "Highlights", none: "Project not found.", dir: "projects", home: "../", proj: "../../../" };
 
+// ---------- CONTACT ----------
+// linkedin : colle l’adresse de ton profil (le logo n’apparaît que lorsqu’elle est renseignée). cv : chemin du PDF.
+const CONTACT = { email: "capongregory68@gmail.com", linkedin: "https://www.linkedin.com/in/TON-IDENTIFIANT", cv: "assets/cv/CV-Gregory_Capon-EN.pdf" };
+
 // ---------- EXPERIENCE ----------
 const EXP_CATS = { pro: "Professional", acad: "Academic", perso: "Personal" };
 
@@ -180,7 +184,7 @@ const EXPERIENCES = [
 ];
 
 // ---------- EDUCATION ----------
-const FORM_CATS = { lycee: "High school", ecole: "Engineering school", mobilite: "Study abroad" };
+const FORM_CATS = { ecole: "Engineering school", mobilite: "Study abroad", lycee: "High school" };
 
 const FORMATIONS = [
   { cat: "lycee", title: "Baccalauréat (French high school diploma)", org: "", period: "2021", summary: "", points: ["Specialisations: mathematics, physics-chemistry, biology."] },
