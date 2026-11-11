@@ -5,7 +5,7 @@ const T = { view: "Voir le projet", back: "Retour aux expériences", images: "Im
 
 // ---------- CONTACT ----------
 // linkedin : colle l’adresse de ton profil (le logo n’apparaît que lorsqu’elle est renseignée). cv : chemin du PDF.
-const CONTACT = { email: "capongregory68@gmail.com", linkedin: "https://www.linkedin.com/in/TON-IDENTIFIANT", cv: "assets/cv/CV-Gregory_Capon-FR.pdf" };
+const CONTACT = { email: "capongregory68@gmail.com", linkedin: "https://www.linkedin.com/in/grégory-capon-254853222/", cv: "assets/cv/CV-Gregory_Capon-FR.pdf" };
 
 // ---------- EXPÉRIENCES (projets) ----------
 // id     : nom du dossier de la page du projet (projects/<id>/). Sans id : simple carte, sans page.
