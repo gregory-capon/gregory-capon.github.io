@@ -86,7 +86,8 @@ const EXPERIENCES = [
           "Augmentation des données pour améliorer la robustesse du modèle.",
           "Entraînement du modèle et ajustement des hyperparamètres.",
           "Évaluation des performances sur différents flux vidéo."
-        ],
+        ]
+      },
       {
         title: "Détection et suivi des objets",
         text: [
@@ -148,7 +149,7 @@ const EXPERIENCES = [
         text: [
           "Les données et les images complémentaires du projet étant confidentielles, seules certaines illustrations peuvent être présentées."
         ],
-        videos: [["https://drive.google.com/file/d/1FKbIuLhU5n6IKQ6zMl-_JZSo0dL-jkPU/view"]] },
+        videos: [["https://drive.google.com/file/d/1FKbIuLhU5n6IKQ6zMl-_JZSo0dL-jkPU/view"]],
       }
     ]
   },
@@ -355,7 +356,7 @@ const FORMATIONS = [
 const DIPLOMES = [
   { title: "Master 2 Intelligence artificielle", org: "UTM, Kuala Lumpur", year: "2026" },
   { title: "Diplôme d’ingénieur, Robotique et Instrumentation, mention très bien", org: "Polytech Dijon", year: "2026" },
-  { title: "Pemris B", org: "", year: ""}, 
+  { title: "Permis B", org: "", year: ""}, 
   { title: "TOEIC (compréhension écrite et orale)", org: "Score", year: "900" }, 
   { title: "Certification ROS2", org: "The Construct", year: "2025" },
   // { title: "TOEIC, compréhension orale et écrite", org: "Score : 900", year: "2025" },
@@ -367,5 +368,5 @@ const SKILLS = [
   ["Programmation", "Python (utilisé en production sur 3 stages), C, C++, Git, Linux et Windows"],
   ["IA et vision", "Computer vision, deep learning, labellisation et augmentation de données, optimisation de modèles, TensorFlow, TensorRT, OpenCV"],
   ["Robotique", "Robots industriels FANUC et Stäubli, notions de ROS2, électronique de base"],
-  ["Langues", "Français (langue maternelle), anglais (professionel)"]
+  ["Langues", "Français (langue maternelle), anglais (professionnel)"]
 ];
