@@ -313,7 +313,7 @@ const EXPERIENCES = [
       },
       { title: "Démonstration",
         text: ["La vidéo présente le fonctionnement du prototype et illustre l'intégration entre la vision par ordinateur, le traitement embarqué et la supervision web."],
-        videos: [["https://drive.google.com/file/d/1mV2nnrxMpAuMydM35jiG_ANqXyOdb4yT/view?usp=drive_link", "Démonstration du système de tri", "center", 65]]
+        videos: [["https://drive.google.com/file/d/1mV2nnrxMpAuMydM35jiG_ANqXyOdb4yT/view?usp=drive_link", "Démonstration du système de tri", "", 65]]
       },
       { title: "Compétences mobilisées",
         callout: true,
