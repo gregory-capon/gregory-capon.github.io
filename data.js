@@ -285,99 +285,52 @@ const EXPERIENCES = [
 
   
   // SYSTEME DE TRI
-  {
-    id: "systeme-supervision-industrielle",
-    cat: "perso",
-    title: "Système de tri automatisé et supervision industrielle",
-    org: "",
-    period: "",
+  { id: "systeme-supervision-industrielle", cat: "perso", title: "Système de tri automatisé et supervision industrielle", org: "", period: "",
     summary: "Conception d'un système automatisé de tri de pièces piloté par Raspberry Pi. Identification des objets par vision par ordinateur et commande du processus depuis une interface web.",
-    tags: [
-      "Python",
-      "Flask",
-      "OpenCV",
-      "Raspberry Pi",
-      "Vision par ordinateur",
-      "Automatisation",
-      "Électronique"
-    ],
+    tags: ["Python", "Flask", "OpenCV", "Raspberry Pi", "Vision par ordinateur", "Automatisation", "Électronique"],
     cover: "assets/img/systeme-supervision-industrielle-cover.png",
 
     sections: [
-      {
-        title: "Contexte et objectif",
-        text: [
-          "Ce projet consiste à concevoir un système automatisé capable de trier des pièces selon différents critères visuels, notamment leur couleur ou leur forme.",
+      { title: "Contexte et objectif",
+        text: ["Ce projet consiste à concevoir un système automatisé capable de trier des pièces selon différents critères visuels, notamment leur couleur ou leur forme.",
           "Le système repose sur un Raspberry Pi qui centralise le traitement des informations issues d'une caméra et des capteurs, puis pilote les différentes étapes du tri.",
-          "L'objectif est de proposer une solution complète associant perception, traitement de l'information, commande des actionneurs et supervision."
-        ]
-      },
-
-      {
-        title: "Architecture du système",
-        text: [
-          "L'architecture s'articule autour de trois fonctions principales : l'acquisition des données, le traitement par vision par ordinateur et la commande du système de tri.",
-          "Le Raspberry Pi assure le traitement logiciel et la coordination des différents éléments du dispositif."
-        ],
-        facts: [
-          ["Acquisition", "Caméra et capteurs pour récupérer les informations nécessaires à l'identification et au fonctionnement du système."],
+          "L'objectif est de proposer une solution complète associant perception, traitement de l'information, commande des actionneurs et supervision."] },
+      { title: "Architecture du système",
+        text: ["L'architecture s'articule autour de trois fonctions principales : l'acquisition des données, le traitement par vision par ordinateur et la commande du système de tri.",
+          "Le Raspberry Pi assure le traitement logiciel et la coordination des différents éléments du dispositif."],
+        facts: [["Acquisition", "Caméra et capteurs pour récupérer les informations nécessaires à l'identification et au fonctionnement du système."],
           ["Traitement", "Python et OpenCV pour analyser les images et identifier les caractéristiques des pièces."],
           ["Commande", "Pilotage du mécanisme de tri en fonction des résultats de l'analyse."],
-          ["Supervision", "Interface web développée avec Flask pour configurer et contrôler le fonctionnement du système."]
-        ],
-        images: [
-          ["assets/img/systeme-supervision-industrielle-cover.png", "Vue d'ensemble du système", "", 75, "center"]
-        ]
+          ["Supervision", "Interface web développée avec Flask pour configurer et contrôler le fonctionnement du système."]],
+        images: [["assets/img/systeme-supervision-industrielle-cover.png", "Vue d'ensemble du système", "", 75, "center"]]
       },
-
-      {
-        title: "Vision par ordinateur et identification",
-        text: [
-          "La caméra fournit les images nécessaires à l'identification des pièces. Le traitement est réalisé en Python avec OpenCV afin d'extraire les caractéristiques visuelles permettant de différencier les objets.",
-          "Deux critères de tri sont proposés : la couleur et la forme. Le choix du mode de fonctionnement est effectué par l'utilisateur depuis l'interface de supervision."
-        ],
-        points: [
-          "Acquisition et traitement des images.",
+      { title: "Vision par ordinateur et identification",
+        text: ["La caméra fournit les images nécessaires à l'identification des pièces. Le traitement est réalisé en Python avec OpenCV afin d'extraire les caractéristiques visuelles permettant de différencier les objets.",
+          "Deux critères de tri sont proposés : la couleur et la forme. Le choix du mode de fonctionnement est effectué par l'utilisateur depuis l'interface de supervision."],
+        points: ["Acquisition et traitement des images.",
           "Extraction des caractéristiques visuelles des pièces.",
           "Identification des objets selon le critère sélectionné.",
-          "Transmission des informations nécessaires à la commande du tri."
-        ]
+          "Transmission des informations nécessaires à la commande du tri."]
       },
-
-      {
-        title: "Interface de supervision",
-        text: [
-          "Une interface web développée avec Flask permet à l'utilisateur d'interagir avec le système sans avoir à intervenir directement sur le programme exécuté par le Raspberry Pi.",
-          "L'utilisateur peut sélectionner le mode de tri souhaité et superviser le fonctionnement du dispositif."
-        ],
-        points: [
-          "Développement d'une interface web avec Flask.",
+      { title: "Interface de supervision",
+        text: ["Une interface web développée avec Flask permet à l'utilisateur d'interagir avec le système sans avoir à intervenir directement sur le programme exécuté par le Raspberry Pi.",
+          "L'utilisateur peut sélectionner le mode de tri souhaité et superviser le fonctionnement du dispositif."],
+        points: ["Développement d'une interface web avec Flask.",
           "Sélection du critère de tri : couleur ou forme.",
           "Communication entre l'interface utilisateur et le programme de commande.",
-          "Centralisation des interactions avec le système."
-        ]
+          "Centralisation des interactions avec le système."]
       },
-
-      {
-        title: "Démonstration",
-        text: [
-          "La vidéo présente le fonctionnement du prototype et illustre l'intégration entre la vision par ordinateur, le traitement embarqué et la supervision web."
-        ],
-        videos: [
-          ["https://drive.google.com/file/d/1vR5DZSj3LirDlXHa6Pm9j8c4B4j5VRJY/view?usp=drive_link", "Démonstration du système de tri", "", 65]
-        ]
+      { title: "Démonstration",
+        text: ["La vidéo présente le fonctionnement du prototype et illustre l'intégration entre la vision par ordinateur, le traitement embarqué et la supervision web."],
+        videos: [["https://drive.google.com/file/d/1vR5DZSj3LirDlXHa6Pm9j8c4B4j5VRJY/view?usp=drive_link", "Démonstration du système de tri", "", 65]]
       },
-
-      {
-        title: "Compétences mobilisées",
+      { title: "Compétences mobilisées",
         callout: true,
-        points: [
-          "Développement Python sur une plateforme embarquée Raspberry Pi.",
+        points: ["Développement Python sur une plateforme embarquée Raspberry Pi.",
           "Traitement d'images et vision par ordinateur avec OpenCV.",
           "Développement d'une interface web avec Flask.",
           "Intégration de composants électroniques et de capteurs.",
-          "Communication entre les différentes briques logicielles et matérielles d'un système automatisé."
-        ]
+          "Communication entre les différentes briques logicielles et matérielles d'un système automatisé."]
       }
     ]
   },
