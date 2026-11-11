@@ -58,7 +58,7 @@ const EXPERIENCES = [
   // WASORIA
   { id: "wasoria", cat: "pro", title: "Wasoria - Stage ingénieur IA", org: "Wasoria, Le Creusot", period: "06/2025 – 08/2025",
     summary: "Conduite d’un projet de détection basé sur l’IA.",
-    tags: ["Python", "Deep learning", "Hyperparamètres", "RFID"],
+    tags: ["Python", "Deep learning", "Hyperparamètres", "RFID", "XAnyLabelling"],
     cover: "assets/img/wasoria-bags.png",
     sections: [
       { title: "Missions",
@@ -66,7 +66,19 @@ const EXPERIENCES = [
           "Constitution de la base de données et augmentation de données.",
           "Ajustement des hyperparamètres et optimisation du modèle.",
           "Conduite d’opérations et d’expériences sur le terrain, de A à Z.",
-          "Développement d’une interface pour trier les fichiers sensibles de l’entreprise."] }
+          "Développement d’une interface pour trier les fichiers sensibles de l’entreprise."] },
+
+      { title: "Projet de comptage"},
+      { texte: "Contexte : Un client de Wasoria souhaite faire des statistiques pour connaître les proportions de la provenance de sacs poubelles dont la couleur varie de l'endroit où ils ont été récupérés."},
+      { texte: "Outils utilisés : YOLOv5 de ultralytics a été utilisé, ce modèle a été choisi car il s'agit d'une tâche de détection relativement simple et YOLOv5 est un modèle assez léger et facile à faire tourner donc c'est pratique."},
+      { texte: "Une compréhension en profondeur de l'architecture de Yolo a été faite au préalable."},
+      { texte: "Une fois le modèle assez performant il faut passer à relier les images entre elles pour tracker les sacs et avoir des trajectoires. (en gros pour éviter de compter 10 détections du même sac en train de tomber comem 10 éléments différents mais plutôtt comme un seul sac). L'outil finalement retneu est un outil développé par Ultralytics nommé BYTETrack"},
+      { texte: "La principale difficulté dans le projet réside dans le fait de détecter correctement les sacs dasn un maximum de frames pour pas les perdre dans le tracking puisque le flux est dense ou sale (poussiere, sacs qui passent devant...)"},
+      { texte: "résultats :"},
+      { images: [["assets/img/wasoria-1.png", "Un exemple de flux dense", "", 60, "left"]]},
+      { images: [["assets/img/wasoria-2.png", "Un exemple de flux sale", "", 60, "right"]]},
+      { images: [["assets/img/wasoria-3.png", "Suivi de trajectoire entre les frames du flux", "", 60, "center"]]},
+      { text: "Les données sont confidentielles et je ne peux donc pas fournir d'avantage d'illustrations des tâches réalisées."} 
     ] },
 
   // AD PROD
@@ -197,7 +209,18 @@ const EXPERIENCES = [
       { h: 3, title: "Phase finale",
         text: ["Plusieurs épreuves sur deux jours, à partir d’un cahier des charges découvert au fil des épreuves. Sont évalués le respect des consignes de sécurité (mise en sécurité de la cellule robotisée, arrêt d’urgence lors des interventions dans la cellule), la communication dans le groupe et surtout la rapidité d’exécution : installer le matériel, programmer le robot et répondre à la demande."],
         points: ["Programmation de robots industriels.", "Prise en main plus poussée de Roboguide."] }
-    ] }
+    ] },
+
+  // SYSTEME DE TRI 
+  { id: "systeme-supervision-industrielle", cat: "perso", title: "Système de supervion industrielle ", org: "", period: "",
+    summary: "Un système de tri de pièces en fonction de la couleur ou de la forme.",
+    tags: ["Python", "Flask", "OpenCV", "Raspberry", "Vision par ordinateur"],
+    cover: "assets/img/systeme-supervision-industrielle-cover.png",
+    sections: [
+      { title: "Description", text: ["Ce projet consiste en la réalisation d’un trieur automatisé de pièces, piloté par un Raspberry Pi. Grâce à une caméra et des capteurs, le système est capable d’identifier les objets selon différents critères.",
+                                     "L’utilisateur peut, depuis une interface web intuitive, choisir de trier les pièces en fonction de leur forme ou de leur couleur. Ce prototype met en avant l’intégration entre électronique embarquée, vision par ordinateur et développement web."] },
+      { title: "Démonstration",
+        videos: [["https://drive.google.com/file/d/1vR5DZSj3LirDlXHa6Pm9j8c4B4j5VRJY/view?usp=drive_link", "Vidéo de présentation de la solution", "", 55]] },
 ];
 
 // ---------- FORMATION ----------
