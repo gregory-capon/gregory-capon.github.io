@@ -134,23 +134,13 @@ const EXPERIENCES = [
       },
 
       {
-        title: "Résultats et bilan",
-        text: [
-          "Développement d'une pipeline complète de détection et de suivi d'objets, depuis la préparation des données jusqu'à l'exploitation des trajectoires.",
-          "Ce projet m'a permis de travailler sur les différentes étapes d'un développement IA appliqué à un environnement industriel : constitution d'une base de données, entraînement, optimisation, évaluation et intégration d'un algorithme de tracking."
-        ],
+        title: "Démonstration",
         callout: true,
-        points: [
-          "Développement Python de bout en bout.",
-          "Prise en main approfondie de YOLOv5 et de ses paramètres.",
-          "Intégration de ByteTrack pour le suivi multi-objets.",
-          "Expérimentation et validation de la solution sur le terrain."
-        ],
-        text: [
+        videos: [["https://drive.google.com/file/d/1FKbIuLhU5n6IKQ6zMl-_JZSo0dL-jkPU/view", "", "", 55]],
+      },
+      { text: [
           "Les données et les images complémentaires du projet étant confidentielles, seules certaines illustrations peuvent être présentées."
         ],
-        videos: [["https://drive.google.com/file/d/1FKbIuLhU5n6IKQ6zMl-_JZSo0dL-jkPU/view", "", "", 55]],
-      }
     ]
   },
 
