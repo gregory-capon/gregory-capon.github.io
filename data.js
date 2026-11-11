@@ -56,30 +56,106 @@ const EXPERIENCES = [
     ] },
 
   // WASORIA
-  { id: "wasoria", cat: "pro", title: "Wasoria - Stage ingénieur IA", org: "Wasoria, Le Creusot", period: "06/2025 – 08/2025",
-    summary: "Conduite d’un projet de détection basé sur l’IA.",
-    tags: ["Python", "Deep learning", "Hyperparamètres", "RFID", "XAnyLabelling"],
+  {
+    id: "wasoria",
+    cat: "pro",
+    title: "Wasoria - Stage ingénieur IA",
+    org: "Wasoria, Le Creusot",
+    period: "06/2025 – 08/2025",
+    summary: "Développement d'une solution de vision par ordinateur pour détecter, suivre et comptabiliser des sacs en mouvement sur un flux vidéo industriel.",
+    tags: ["Python", "YOLOv5", "Deep learning", "Computer Vision", "ByteTrack", "OpenCV", "XAnyLabeling"],
     cover: "assets/img/wasoria-bags.png",
-    sections: [
-      { title: "Missions",
-        points: ["Développement Python de la solution.",
-          "Constitution de la base de données et augmentation de données.",
-          "Ajustement des hyperparamètres et optimisation du modèle.",
-          "Conduite d’opérations et d’expériences sur le terrain, de A à Z.",
-          "Développement d’une interface pour trier les fichiers sensibles de l’entreprise."] },
 
-      { title: "Projet de comptage"},
-      { texte: "Contexte : Un client de Wasoria souhaite faire des statistiques pour connaître les proportions de la provenance de sacs poubelles dont la couleur varie de l'endroit où ils ont été récupérés."},
-      { texte: "Outils utilisés : YOLOv5 de ultralytics a été utilisé, ce modèle a été choisi car il s'agit d'une tâche de détection relativement simple et YOLOv5 est un modèle assez léger et facile à faire tourner donc c'est pratique."},
-      { texte: "Une compréhension en profondeur de l'architecture de Yolo a été faite au préalable."},
-      { texte: "Une fois le modèle assez performant il faut passer à relier les images entre elles pour tracker les sacs et avoir des trajectoires. (en gros pour éviter de compter 10 détections du même sac en train de tomber comem 10 éléments différents mais plutôtt comme un seul sac). L'outil finalement retneu est un outil développé par Ultralytics nommé BYTETrack"},
-      { texte: "La principale difficulté dans le projet réside dans le fait de détecter correctement les sacs dasn un maximum de frames pour pas les perdre dans le tracking puisque le flux est dense ou sale (poussiere, sacs qui passent devant...)"},
-      { texte: "résultats :"},
-      { images: [["assets/img/wasoria-1.png", "Un exemple de flux dense", "", 60, "left"]]},
-      { images: [["assets/img/wasoria-2.png", "Un exemple de flux sale", "", 60, "right"]]},
-      { images: [["assets/img/wasoria-3.png", "Suivi de trajectoire entre les frames du flux", "", 60, "center"]]},
-      { text: "Les données sont confidentielles et je ne peux donc pas fournir d'avantage d'illustrations des tâches réalisées."} 
-    ] },
+    sections: [
+      {
+        title: "Contexte et objectif",
+        text: [
+          "Un client de Wasoria souhaitait exploiter un flux vidéo pour établir des statistiques sur la provenance de sacs poubelles. La couleur des sacs constituait notamment un indicateur permettant de différencier leur origine.",
+          "L'objectif était de développer une solution capable de détecter les sacs dans un flux vidéo, de les suivre au cours de leur déplacement et de les comptabiliser sans doublons."
+        ]
+      },
+
+      {
+        title: "Développement de la solution",
+        text: [
+          "Le développement a été réalisé en Python, en s'appuyant sur YOLOv5 (Ultralytics) pour la détection des sacs. Ce modèle a été retenu pour son compromis entre performances, légèreté et facilité de déploiement.",
+          "Une étude préalable de l'architecture YOLO a permis de comprendre le fonctionnement du modèle et d'identifier les paramètres à ajuster pour répondre aux contraintes du projet."
+        ],
+        points: [
+          "Constitution et labellisation d'une base de données d'images avec XAnyLabeling.",
+          "Augmentation des données pour améliorer la robustesse du modèle.",
+          "Entraînement du modèle et ajustement des hyperparamètres.",
+          "Évaluation des performances sur différents flux vidéo."
+        ],
+        images: [
+          ["assets/img/wasoria-bags.png", "Exemples de données utilisées pour le projet", "", 65, "center"]
+        ]
+      },
+
+      {
+        title: "Détection et suivi des objets",
+        text: [
+          "La détection seule ne permet pas de comptabiliser correctement les sacs : un même objet apparaît sur plusieurs images successives et pourrait donc être compté plusieurs fois.",
+          "Pour résoudre ce problème, une étape de tracking a été ajoutée à la pipeline de détection. La solution retenue est ByteTrack, un algorithme de suivi multi-objets développé par ByteDance et intégré à l'écosystème Ultralytics.",
+          "Chaque sac détecté est associé à une identité persistante au fil des images. Cela permet de reconstruire sa trajectoire et de le comptabiliser comme un seul objet malgré ses multiples apparitions dans le flux vidéo."
+        ],
+        facts: [
+          ["Détection", "YOLOv5 : localisation des sacs dans chaque image."],
+          ["Tracking", "ByteTrack : association des détections entre les images."],
+          ["Identification", "Attribution et maintien d'un identifiant pour chaque objet suivi."],
+          ["Exploitation", "Comptabilisation des sacs et analyse de leur répartition."]
+        ],
+        images: [
+          ["assets/img/wasoria-3.png", "Suivi des trajectoires entre les images du flux vidéo", "Visualisation du tracking des objets détectés.", 75, "center"]
+        ]
+      },
+
+      {
+        title: "Difficultés techniques",
+        text: [
+          "La principale difficulté résidait dans la continuité du tracking. Pour conserver l'identité d'un sac, celui-ci doit être correctement détecté sur suffisamment d'images successives."
+        ],
+        points: [
+          ["Flux vidéo dense", [
+            "Présence simultanée de nombreux sacs.",
+            "Objets susceptibles de se masquer temporairement les uns les autres.",
+            "Risque de confusion entre plusieurs détections proches."
+          ]],
+          ["Qualité variable des images", [
+            "Présence de poussière et de perturbations visuelles.",
+            "Occlusions provoquées par les sacs passant devant d'autres objets.",
+            "Difficulté à maintenir une détection stable dans toutes les conditions."
+          ]],
+          ["Optimisation du tracking", [
+            "Recherche d'un compromis entre la qualité de détection et la continuité des trajectoires.",
+            "Limitation des pertes d'identité et des erreurs de comptabilisation."
+          ]]
+        ],
+        images: [
+          ["assets/img/wasoria-1.png", "Exemple de flux dense", "Nombreux objets présents simultanément dans la scène.", 65, "center"],
+          ["assets/img/wasoria-2.png", "Exemple de flux perturbé", "Conditions visuelles difficiles pour la détection.", 65, "center"]
+        ]
+      },
+
+      {
+        title: "Résultats et bilan",
+        text: [
+          "Développement d'une pipeline complète de détection et de suivi d'objets, depuis la préparation des données jusqu'à l'exploitation des trajectoires.",
+          "Ce projet m'a permis de travailler sur les différentes étapes d'un développement IA appliqué à un environnement industriel : constitution d'une base de données, entraînement, optimisation, évaluation et intégration d'un algorithme de tracking."
+        ],
+        callout: true,
+        points: [
+          "Développement Python de bout en bout.",
+          "Prise en main approfondie de YOLOv5 et de ses paramètres.",
+          "Intégration de ByteTrack pour le suivi multi-objets.",
+          "Expérimentation et validation de la solution sur le terrain."
+        ],
+        text: [
+          "Les données et les images complémentaires du projet étant confidentielles, seules certaines illustrations peuvent être présentées."
+        ]
+      }
+    ]
+  },
 
   // AD PROD
   { id: "adprod", cat: "pro", title: "ADProd - Stage ingénieur : conception d’un robot conversationnel", org: "ADProd, Annecy", period: "04/2025 – 05/2025",
