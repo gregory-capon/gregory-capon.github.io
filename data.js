@@ -87,11 +87,6 @@ const EXPERIENCES = [
           "Entraînement du modèle et ajustement des hyperparamètres.",
           "Évaluation des performances sur différents flux vidéo."
         ],
-        images: [
-          ["assets/img/wasoria-bags.png", "Exemples de données utilisées pour le projet", "", 65, "center"]
-        ]
-      },
-
       {
         title: "Détection et suivi des objets",
         text: [
@@ -152,7 +147,8 @@ const EXPERIENCES = [
         ],
         text: [
           "Les données et les images complémentaires du projet étant confidentielles, seules certaines illustrations peuvent être présentées."
-        ]
+        ],
+        videos: [["https://drive.google.com/file/d/1FKbIuLhU5n6IKQ6zMl-_JZSo0dL-jkPU/view"]] },
       }
     ]
   },
