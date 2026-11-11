@@ -102,7 +102,7 @@ const EXPERIENCES = [
           ["Exploitation", "Comptabilisation des sacs et analyse de leur répartition."]
         ],
         images: [
-          ["assets/img/wasoria-3.png", "Suivi des trajectoires entre les images du flux vidéo", "Visualisation du tracking des objets détectés.", 75, "center"]
+          ["assets/img/wasoria-4.png", "Suivi des trajectoires entre les images du flux vidéo", "Visualisation du tracking des objets détectés.", 75, "center"]
         ]
       },
 
@@ -128,8 +128,8 @@ const EXPERIENCES = [
           ]]
         ],
         images: [
-          ["assets/img/wasoria-1.png", "Exemple de flux dense", "Nombreux objets présents simultanément dans la scène.", 65, "center"],
-          ["assets/img/wasoria-2.png", "Exemple de flux perturbé", "Conditions visuelles difficiles pour la détection.", 65, "center"]
+          ["assets/img/wasoria-2.png", "Exemple de flux dense", "Nombreux objets présents simultanément dans la scène.", 65, "center"],
+          ["assets/img/wasoria-3.png", "Exemple de flux perturbé", "Conditions visuelles difficiles pour la détection.", 65, "center"]
         ]
       },
 
@@ -149,7 +149,7 @@ const EXPERIENCES = [
         text: [
           "Les données et les images complémentaires du projet étant confidentielles, seules certaines illustrations peuvent être présentées."
         ],
-        videos: [["https://drive.google.com/file/d/1FKbIuLhU5n6IKQ6zMl-_JZSo0dL-jkPU/view"]],
+        videos: [["https://drive.google.com/file/d/1FKbIuLhU5n6IKQ6zMl-_JZSo0dL-jkPU/view", "", "", 55]],
       }
     ]
   },
