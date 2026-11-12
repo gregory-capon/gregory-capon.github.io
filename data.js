@@ -137,11 +137,10 @@ const EXPERIENCES = [
         title: "Démonstration",
         callout: true,
         videos: [["https://drive.google.com/file/d/1FKbIuLhU5n6IKQ6zMl-_JZSo0dL-jkPU/view", "", "", 55]],
-      },
-      { text: [
+        text: [
           "Les données et les images complémentaires du projet étant confidentielles, seules certaines illustrations peuvent être présentées."
-        ],
-      }
+        ]
+      },
   },
 
   // AD PROD
