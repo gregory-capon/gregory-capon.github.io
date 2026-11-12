@@ -141,7 +141,7 @@ const EXPERIENCES = [
       { text: [
           "Les données et les images complémentaires du projet étant confidentielles, seules certaines illustrations peuvent être présentées."
         ],
-    ]
+      }
   },
 
   // AD PROD
