@@ -277,7 +277,7 @@ const EXPERIENCES = [
   { id: "systeme-supervision-industrielle", cat: "perso", title: "Automated Sorting System and Industrial Supervision", org: "", period: "",
     summary: "Designed an automated part-sorting system controlled by a Raspberry Pi. Objects are identified through computer vision, while the process is controlled via a web-based interface.",
     tags: ["Python", "Flask", "OpenCV", "Raspberry Pi", "Computer Vision", "Automation", "Electronics"],
-    cover: "assets/img/systeme-supervision-industrielle-cover.png",
+    cover: "assets/img/tri-cover.png",
 
     sections: [
       { title: "Background and objectives",
