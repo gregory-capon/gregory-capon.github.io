@@ -279,7 +279,7 @@ const EXPERIENCES = [
   { id: "systeme-supervision-industrielle", cat: "perso", title: "Système de tri automatisé et supervision industrielle", org: "", period: "",
     summary: "Conception d'un système automatisé de tri de pièces piloté par Raspberry Pi. Identification des objets par vision par ordinateur et commande du processus depuis une interface web.",
     tags: ["Python", "Flask", "OpenCV", "Raspberry Pi", "Vision par ordinateur", "Automatisation", "Électronique"],
-    cover: "assets/img/systeme-supervision-industrielle-cover.png",
+    cover: "assets/img/tri-cover.png",
 
     sections: [
       { title: "Contexte et objectif",
