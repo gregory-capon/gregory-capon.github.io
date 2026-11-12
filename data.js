@@ -137,11 +137,12 @@ const EXPERIENCES = [
         title: "Démonstration",
         callout: true,
         videos: [["https://drive.google.com/file/d/1FKbIuLhU5n6IKQ6zMl-_JZSo0dL-jkPU/view", "", "", 55]],
-        text: [
-          "Les données et les images complémentaires du projet étant confidentielles, seules certaines illustrations peuvent être présentées."
-        ]
-      },
+        text: ["Les données et les images complémentaires du projet étant confidentielles, seules certaines illustrations peuvent être présentées."]
+      }
+    ]
   },
+
+  // AD PROD
 
   // AD PROD
   { id: "adprod", cat: "pro", title: "ADProd - Stage ingénieur : conception d’un robot conversationnel", org: "ADProd, Annecy", period: "04/2025 – 05/2025",
