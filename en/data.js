@@ -6,7 +6,7 @@ const T = { view: "View project", back: "Back to experience", images: "Images", 
 
 // ---------- CONTACT ----------
 // linkedin: paste your profile URL (the logo only appears when a URL is provided). cv: PDF file path.
-const CONTACT = { email: "capongregory68@gmail.com", linkedin: "https://www.linkedin.com/in/grégory-capon-254853222/", cv: "assets/cv/CV-Gregory Capon-EN.pdf" };
+const CONTACT = { email: "capongregory68@gmail.com", linkedin: "https://www.linkedin.com/in/grégory-capon-254853222/", cv: "assets/cv/CV-Gregory_Capon-EN.pdf" };
 
 // ---------- EXPERIENCE (PROJECTS) ----------
 // id       : project page folder name (projects/<id>/). Without an id: displays a card only, with no dedicated page.
